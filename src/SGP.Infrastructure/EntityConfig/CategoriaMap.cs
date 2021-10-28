@@ -11,8 +11,6 @@ namespace SGP.Infrastructure.EntityConfig
     {
         public void Configure(EntityTypeBuilder<Categoria> builder)
         {
-            //builder.HasKey(ca => ca.CategoriaID);
-
             builder
                 .Property(f => f.CategoriaId).ValueGeneratedOnAdd();
 
