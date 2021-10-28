@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGP.AplicationCore", "src\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGP.Infrastructure", "src\SGP.Infrastructure\SGP.Infrastructure.csproj", "{08BFC890-FAF9-4885-9EEE-3B109807C13F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCG.UI.WebAPI", "src\SCG.UI.WebAPI\SCG.UI.WebAPI.csproj", "{075DB342-896A-413B-AAEA-3758F496E1FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCP.UI.WebAPI", "src\SCG.UI.WebAPI\SCP.UI.WebAPI.csproj", "{075DB342-896A-413B-AAEA-3758F496E1FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6876B00C-97FE-4127-87EA-BCD5470C276E}"
+	ProjectSection(SolutionItems) = preProject
+		Read Me.txt = Read Me.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
