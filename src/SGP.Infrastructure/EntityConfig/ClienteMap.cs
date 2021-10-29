@@ -19,7 +19,8 @@ namespace SGP.Infrastructure.EntityConfig
 
 
             builder.Property(e => e.Nome)
-                .HasColumnType("varchar(150)");
+                .HasColumnType("varchar(150)")
+                .IsRequired();
 
             builder.Property(e => e.Email)
                .HasColumnType("varchar(150)")

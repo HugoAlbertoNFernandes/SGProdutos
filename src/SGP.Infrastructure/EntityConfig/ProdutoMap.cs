@@ -18,10 +18,12 @@ namespace SGP.Infrastructure.EntityConfig
                 .ValueGeneratedOnAdd();
 
             builder.Property(e => e.Preco)
-                .HasColumnType("money");
+                .HasColumnType("money")
+                .IsRequired();
 
             builder.Property(e => e.Nome)
-                .HasColumnType("varchar(150)");
+                .HasColumnType("varchar(150)")
+                .IsRequired();
 
         }
     }

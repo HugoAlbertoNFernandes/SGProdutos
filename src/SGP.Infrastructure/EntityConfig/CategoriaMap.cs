@@ -15,7 +15,8 @@ namespace SGP.Infrastructure.EntityConfig
                 .Property(f => f.CategoriaId).ValueGeneratedOnAdd();
 
             builder.Property(e => e.Descricao)
-               .HasColumnType("varchar(200)");
+               .HasColumnType("varchar(200)")
+               .IsRequired();
 
         }
 
