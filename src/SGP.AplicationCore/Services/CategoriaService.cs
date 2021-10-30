@@ -1,4 +1,5 @@
 ﻿using SGP.AplicationCore.Entity;
+using SGP.AplicationCore.Interfaces.Repository;
 using SGP.AplicationCore.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -7,43 +8,43 @@ using System.Text;
 
 namespace SGP.AplicationCore.Services
 {
-    public class CategoriaServices : ICategoriaServices
+    public class CategoriaService : ICategoriaServices
     {
-        private readonly ICategoriaServices _categoriaServices;
-        public CategoriaServices(ICategoriaServices categoriaService)
+        private readonly ICategoriaRepository _categoriaRepository;
+        public CategoriaService(ICategoriaRepository categoriaRepository)
         {
-            _categoriaServices = categoriaService;
+            _categoriaRepository = categoriaRepository;
         }
 
         public Categoria Adicionar(Categoria entity)
         {
             if (true)
-                return _categoriaServices.Adicionar(entity);
+                return _categoriaRepository.Adicionar(entity);
         }
 
         public void Atualizar(Categoria entity)
         {
-            _categoriaServices.Atualizar(entity);
+            _categoriaRepository.Atualizar(entity);
         }
 
         public IEnumerable<Categoria> Buscar(Expression<Func<Categoria, bool>> predicado)
         {
-            return _categoriaServices.Buscar(predicado);
+            return _categoriaRepository.Buscar(predicado);
         }
 
         public Categoria ObterPorId(int id)
         {
-            return _categoriaServices.ObterPorId(id);
+            return _categoriaRepository.ObterPorId(id);
         }
 
         public IEnumerable<Categoria> ObterTodos()
         {
-            return _categoriaServices.ObterTodos();
+            return _categoriaRepository.ObterTodos();
         }
 
         public void Remover(Categoria entity)
         {
-            _categoriaServices.Remover(entity);
+            _categoriaRepository.Remover(entity);
         }
     }
 }

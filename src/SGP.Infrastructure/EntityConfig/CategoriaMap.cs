@@ -11,10 +11,13 @@ namespace SGP.Infrastructure.EntityConfig
     {
         public void Configure(EntityTypeBuilder<Categoria> builder)
         {
-            builder
-                .Property(f => f.CategoriaId).ValueGeneratedOnAdd();
+            builder.HasKey(a => a.CategoriaId);
 
-            builder.Property(e => e.Descricao)
+            builder
+                .Property(a => a.CategoriaId)
+                .ValueGeneratedOnAdd();
+
+            builder.Property(a => a.Descricao)
                .HasColumnType("varchar(200)")
                .IsRequired();
 

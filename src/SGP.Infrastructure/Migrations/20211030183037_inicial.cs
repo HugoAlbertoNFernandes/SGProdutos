@@ -12,7 +12,7 @@ namespace SGP.Infrastructure.Migrations
                 {
                     CategoriaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao = table.Column<string>(type: "varchar(200)", nullable: true)
+                    Descricao = table.Column<string>(type: "varchar(200)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,7 +25,7 @@ namespace SGP.Infrastructure.Migrations
                 {
                     ClienteId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "varchar(150)", nullable: true),
+                    Nome = table.Column<string>(type: "varchar(150)", nullable: false),
                     Email = table.Column<string>(type: "varchar(150)", nullable: false),
                     Senha = table.Column<string>(type: "varchar(150)", nullable: false)
                 },
@@ -40,8 +40,8 @@ namespace SGP.Infrastructure.Migrations
                 {
                     ProdutoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "varchar(150)", nullable: true),
-                    Preco = table.Column<decimal>(type: "money", nullable: true),
+                    Nome = table.Column<string>(type: "varchar(150)", nullable: false),
+                    Preco = table.Column<decimal>(type: "money", nullable: false),
                     CategoriaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

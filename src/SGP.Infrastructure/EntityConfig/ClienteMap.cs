@@ -17,7 +17,6 @@ namespace SGP.Infrastructure.EntityConfig
                 .Property(f => f.ClienteId)
                 .ValueGeneratedOnAdd();
 
-
             builder.Property(e => e.Nome)
                 .HasColumnType("varchar(150)")
                 .IsRequired();

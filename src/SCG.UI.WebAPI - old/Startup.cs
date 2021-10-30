@@ -7,7 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SGP.AplicationCore.Interfaces.Repository;
+using SGP.AplicationCore.Interfaces.Services;
+using SGP.AplicationCore.Services;
 using SGP.Infrastructure.Data;
+using SGP.Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +32,16 @@ namespace SCG.UI.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<SgcContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));            
+
+            services.AddScoped<IProdutoServices, ProdutoService>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
+            services.AddScoped<IClienteServices, ClienteService>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+
+            services.AddScoped<ICategoriaServices, CategoriaService>();
+            services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
             services.AddControllers();
         }
@@ -39,6 +52,10 @@ namespace SCG.UI.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseHttpsRedirection();

@@ -26,6 +26,7 @@ namespace SGP.Infrastructure.Data
                  }
             };
             context.AddRange(clientes);
+            context.SaveChanges();
 
             var categorias = new Categoria[]
             {
@@ -43,7 +44,27 @@ namespace SGP.Infrastructure.Data
                 }
             };
             context.AddRange(categorias);
+            context.SaveChanges();
 
+            var prod = new Produto[] {
+                new Produto
+                {
+                    Nome="Arroz",
+                    Preco=Convert.ToDecimal("18.00"),
+                    CategoriaId=1
+                },new Produto
+                {
+                    Nome="Coca-Cola",
+                    Preco=Convert.ToDecimal("8.00"),
+                    CategoriaId=2
+                },new Produto
+                {
+                    Nome="Tapoer",
+                    Preco=Convert.ToDecimal("10.00"),
+                    CategoriaId=3
+                }
+            };
+            context.AddRange(prod);
             context.SaveChanges();
         }
     }

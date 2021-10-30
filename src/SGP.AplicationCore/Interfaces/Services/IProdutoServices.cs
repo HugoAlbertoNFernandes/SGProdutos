@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SGP.AplicationCore.Interfaces.Services
 {
-    interface IProdutoServices
+    public interface IProdutoServices
     {
         Produto Adicionar(Produto entity);
         void Atualizar(Produto entity);

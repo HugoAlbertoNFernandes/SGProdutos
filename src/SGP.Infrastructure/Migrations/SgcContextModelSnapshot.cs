@@ -27,6 +27,7 @@ namespace SGP.Infrastructure.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.HasKey("CategoriaId");
@@ -46,6 +47,7 @@ namespace SGP.Infrastructure.Migrations
                         .HasColumnType("varchar(150)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("varchar(150)");
 
                     b.Property<string>("Senha")
@@ -68,9 +70,11 @@ namespace SGP.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("varchar(150)");
 
                     b.Property<decimal?>("Preco")
+                        .IsRequired()
                         .HasColumnType("money");
 
                     b.HasKey("ProdutoId");
