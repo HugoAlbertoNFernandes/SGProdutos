@@ -14,3 +14,7 @@ Projetos
 	SGP.AplicationCore - Camada de Negocio
 3 - Infrastructure - Camada de infra
 	SGP.Infrastrucutre - Camada de Dados
+
+Login de Acesso
+	Email:adm@hotmail.com
+	Senha:1234
