@@ -13,11 +13,9 @@ namespace SCP.UI.Web.Controllers
 {
     public class ProdutoController : Controller
     {
-        //readonly string url = "http://localhost:23089/produtos";
-        //readonly string urlCategoria = "http://localhost:23089/categorias";
+        readonly string url = "http://localhost:23089/produtos";
+        readonly string urlCategoria = "http://localhost:23089/categorias";
 
-        readonly string url = "http://localhost:8085/produtos";
-        readonly string urlCategoria = "http://localhost:8085/categorias";
         public IActionResult Index()
         {
             if (HttpContext.Session.GetString("Nome") != null && HttpContext.Session.GetString("Id") != null)

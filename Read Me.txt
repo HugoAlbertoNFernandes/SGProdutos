@@ -18,3 +18,7 @@ Projetos
 Login de Acesso
 	Email:adm@hotmail.com
 	Senha:1234
+
+para Alterar as urls das WebAPIs Basta ir SCP.UI.Web 
+HomeController e trocar a variavel url
+ProdutoController e trocar as variaveis url e urlCategoria

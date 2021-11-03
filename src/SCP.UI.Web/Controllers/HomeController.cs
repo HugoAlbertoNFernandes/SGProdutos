@@ -15,8 +15,8 @@ namespace SCP.UI.Web.Controllers
 {
     public class HomeController : Controller
     {
-        
 
+        readonly string url = "http://localhost:23089/cliente";
         public HomeController()
         {
            
@@ -33,7 +33,7 @@ namespace SCP.UI.Web.Controllers
             if (cli.Email != null || cli.Senha != null)
             {
 
-                var repo = new ClienteRepository("http://localhost:8085/cliente",
+                var repo = new ClienteRepository(this.url,
                                             cli.Email.ToString(),
                                             cli.Senha.ToString());
 
