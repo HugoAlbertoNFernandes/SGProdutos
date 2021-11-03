@@ -13,7 +13,11 @@ namespace SGP.AplicationCore.Entity
         public int CategoriaId { get; set; }
         [Display(Name = "Descrição")]
         public string Descricao { get; set; }
-        public Produto Produtos { get; set; }
-        
+        public virtual ICollection<Produto> Produtos { get; set; }
+
+        public Categoria()
+        {
+            Produtos = new List<Produto>();
+        }
     }
 }

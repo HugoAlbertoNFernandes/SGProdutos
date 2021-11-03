@@ -17,6 +17,12 @@ namespace SGP.Infrastructure.EntityConfig
                 .Property(a => a.CategoriaId)
                 .ValueGeneratedOnAdd();
 
+            builder
+                .HasMany(p => p.Produtos)
+                .WithOne(c => c.Categorias)
+                .HasForeignKey(p=>p.CategoriaId)
+                .HasPrincipalKey(p=>p.CategoriaId);
+               
             builder.Property(a => a.Descricao)
                .HasColumnType("varchar(200)")
                .IsRequired();

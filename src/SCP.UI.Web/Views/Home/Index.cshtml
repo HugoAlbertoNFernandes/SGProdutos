@@ -1,0 +1,58 @@
+﻿@model SGP.AplicationCore.Entity.Cliente
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <title>Login</title>
+    <style>
+        .user {
+            border: 0px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        .pass {
+            border: 0px;
+            width: 300px !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="main-content-agile">
+        <div class="sub-main-w3">
+            <h2>Login de Acesso</h2>
+            @using (Html.BeginForm())
+            {
+                <div class="pom-agile">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    @Html.TextBoxFor(m => Model.Email, new { @class = "user", autocomplete = "off" })
+
+                </div>
+                <div class="pom-agile">
+                    <span class="fa fa-key" aria-hidden="true"></span>
+                    @Html.PasswordFor(m => m.Senha, new { @class = "pass", autocomplete = "off" })
+                </div>
+                
+                <div class="right-w3l">
+                    <br />
+                    <input type="submit" value="Login">
+                </div>
+                <div>
+                    <p><h2 style="color:red;">@ViewBag.Message</h2></p>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="footer">
+        <p>
+            &copy; 2021 All rights reserved | Design by Hugo Alberto do Nascimento Fernandes
+        </p>
+    </div>
+</body>
+</html>

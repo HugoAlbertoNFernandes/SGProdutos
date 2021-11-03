@@ -16,7 +16,12 @@ namespace SGP.AplicationCore.Entity
         [Display(Name = "Preço")]
         [DataType(DataType.Currency)]
         public decimal? Preco { get; set; }
-        public Categoria Categorias { get; set; }
+
+        [ForeignKey("Categoria")]
         public int CategoriaId { get; set; }
+        public Categoria Categorias { get; set; }
+
+
+        
     }
 }

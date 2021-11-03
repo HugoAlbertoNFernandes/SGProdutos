@@ -58,8 +58,7 @@ namespace SGP.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Produto_CategoriaId",
                 table: "Produto",
-                column: "CategoriaId",
-                unique: true);
+                column: "CategoriaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

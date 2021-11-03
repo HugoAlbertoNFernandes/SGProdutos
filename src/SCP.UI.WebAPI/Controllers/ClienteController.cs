@@ -21,7 +21,6 @@ namespace SCP.UI.WebAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Produto>> GetAllProdutos()
         {
-            //var produtoItens = this._produto.ObterTodos();
             return Ok(this._cliente.ObterTodos());
         }
 

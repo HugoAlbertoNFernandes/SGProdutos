@@ -79,8 +79,7 @@ namespace SGP.Infrastructure.Migrations
 
                     b.HasKey("ProdutoId");
 
-                    b.HasIndex("CategoriaId")
-                        .IsUnique();
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Produto");
                 });
@@ -88,8 +87,8 @@ namespace SGP.Infrastructure.Migrations
             modelBuilder.Entity("SGP.AplicationCore.Entity.Produto", b =>
                 {
                     b.HasOne("SGP.AplicationCore.Entity.Categoria", "Categorias")
-                        .WithOne("Produtos")
-                        .HasForeignKey("SGP.AplicationCore.Entity.Produto", "CategoriaId")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

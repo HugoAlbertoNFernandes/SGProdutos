@@ -10,7 +10,7 @@ using SGP.Infrastructure.Data;
 namespace SGP.Infrastructure.Migrations
 {
     [DbContext(typeof(SgcContext))]
-    [Migration("20211030183037_inicial")]
+    [Migration("20211031192044_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,8 +81,7 @@ namespace SGP.Infrastructure.Migrations
 
                     b.HasKey("ProdutoId");
 
-                    b.HasIndex("CategoriaId")
-                        .IsUnique();
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Produto");
                 });
@@ -90,8 +89,8 @@ namespace SGP.Infrastructure.Migrations
             modelBuilder.Entity("SGP.AplicationCore.Entity.Produto", b =>
                 {
                     b.HasOne("SGP.AplicationCore.Entity.Categoria", "Categorias")
-                        .WithOne("Produtos")
-                        .HasForeignKey("SGP.AplicationCore.Entity.Produto", "CategoriaId")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

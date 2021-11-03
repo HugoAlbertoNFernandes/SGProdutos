@@ -17,6 +17,9 @@ namespace SGP.Infrastructure.EntityConfig
                 .Property(f => f.ProdutoId)
                 .ValueGeneratedOnAdd();
 
+            
+
+
             builder.Property(e => e.Preco)
                 .HasColumnType("money")
                 .IsRequired();

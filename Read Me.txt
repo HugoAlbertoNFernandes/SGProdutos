@@ -1,3 +1,16 @@
+Migration
 add-migration inicial
-
 update-database 
+
+swagger
+http://localhost:23089/swagger/v1/swagger.json
+http://localhost:23089/swagger/
+
+Projetos
+1 - UI - aplicações
+	SCP.UI.Web - Asp.Net Core 
+	SCP.UI.WebWebAPI - Rest, swagger neste progeto
+2 - Domain - Camada de Negocios
+	SGP.AplicationCore - Camada de Negocio
+3 - Infrastructure - Camada de infra
+	SGP.Infrastrucutre - Camada de Dados

@@ -12,6 +12,7 @@ using SGP.AplicationCore.Interfaces.Services;
 using SGP.AplicationCore.Services;
 using SGP.Infrastructure.Data;
 using SGP.Infrastructure.Repository;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,24 @@ namespace SCP.UI.WebAPI
 
             //services.AddDatabaseDeveloperPageExceptionFilter();
 
+            services.AddControllers().AddNewtonsoftJson(x =>
+                x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddControllers();
+
+            services.AddSwaggerGen(c=> {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "APIProdutos",
+                    Version = "v1",
+                    Description = "Teste MazzaFC para desenvolvedor C# Full Stack",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name="Hugo Alberto do Nascimento Fernandes",
+                        Email = "hugoanf@hotmail.com"
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +79,13 @@ namespace SCP.UI.WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "APIProdutos V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {
